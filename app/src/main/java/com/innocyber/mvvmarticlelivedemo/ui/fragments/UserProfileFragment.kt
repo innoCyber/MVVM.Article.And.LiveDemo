@@ -16,16 +16,16 @@ import com.innocyber.mvvmarticlelivedemo.viewmodel.UserProfileViewModel
  */
 class UserProfileFragment : Fragment() {
 
-    private val viewModel: UserProfileViewModel by viewModels(
-        factoryProducer = { SavedStateVMFactory(this) }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user_profile, container, false)
-    }
+//    private val viewModel: UserProfileViewModel by viewModels(
+//        factoryProducer = { SavedStateVMFactory(this) }
+//
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_user_profile, container, false)
+//    }
 
 
 
