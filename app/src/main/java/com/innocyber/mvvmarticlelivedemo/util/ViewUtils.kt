@@ -12,3 +12,7 @@ fun Context.toast(message:String){
 fun ProgressBar.show(){
     visibility= View.VISIBLE
 }
+
+fun ProgressBar.hide(){
+    visibility= View.INVISIBLE
+}
