@@ -1,6 +1,7 @@
 package com.innocyber.mvvmarticlelivedemo.ui.auth
 
 import androidx.lifecycle.ViewModel
+import com.innocyber.mvvmarticlelivedemo.data.repository.UserRepository
 
 class AuthViewModel: ViewModel() {
 
@@ -15,6 +16,7 @@ class AuthViewModel: ViewModel() {
             authListener!!.onFailure("Login failed")
             return
         }
-        authListener!!.onSuccess()
+        val loginResponse = UserRepository().userLogin(email!!,password!!)
+        authListener?.onSuccess(loginResponse)
     }
 }

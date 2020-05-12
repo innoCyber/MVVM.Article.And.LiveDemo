@@ -3,6 +3,8 @@ package com.innocyber.mvvmarticlelivedemo.ui.auth
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.innocyber.mvvmarticlelivedemo.R
 import com.innocyber.mvvmarticlelivedemo.databinding.ActivityLoginBinding
@@ -23,8 +25,10 @@ class LoginActivity : AppCompatActivity(),AuthListener {
         toast("Login started")
     }
 
-    override fun onSuccess() {
-        toast("Login success")
+    override fun onSuccess(loginResponse: LiveData<String>) {
+        loginResponse.observe(this, Observer {
+            toast(it)
+        })
     }
 
     override fun onFailure(message: String) {
