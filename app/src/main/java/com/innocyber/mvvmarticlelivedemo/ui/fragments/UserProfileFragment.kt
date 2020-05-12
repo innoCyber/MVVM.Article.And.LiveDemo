@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 
 import com.innocyber.mvvmarticlelivedemo.R
-import com.innocyber.mvvmarticlelivedemo.viewmodel.UserProfileViewModel
 
 /**
  * A simple [Fragment] subclass.
