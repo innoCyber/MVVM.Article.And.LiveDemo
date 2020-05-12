@@ -3,10 +3,10 @@ package com.innocyber.mvvmarticlelivedemo.ui.auth
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.innocyber.mvvmarticlelivedemo.R
+import com.innocyber.mvvmarticlelivedemo.data.db.User
 import com.innocyber.mvvmarticlelivedemo.databinding.ActivityLoginBinding
 import com.innocyber.mvvmarticlelivedemo.util.hide
 import com.innocyber.mvvmarticlelivedemo.util.show
@@ -28,11 +28,8 @@ class LoginActivity : AppCompatActivity(),AuthListener {
         progress_bar.show()
     }
 
-    override fun onSuccess(loginResponse: LiveData<String>) {
-        loginResponse.observe(this, Observer {
-            progress_bar.hide()
-            toast(it)
-        })
+    override fun onSuccess(user: User) {
+        toast("${user.name} logged in successfully")
     }
 
     override fun onFailure(message: String) {
