@@ -18,7 +18,7 @@ interface Api {
 
     companion object{
         operator fun invoke():Api{
-            return Retrofit.Builder().baseUrl("https://api.simplifiedcoding.in/course-apis/mvvm/").
+            return Retrofit.Builder().baseUrl("").
                     addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(Api::class.java)

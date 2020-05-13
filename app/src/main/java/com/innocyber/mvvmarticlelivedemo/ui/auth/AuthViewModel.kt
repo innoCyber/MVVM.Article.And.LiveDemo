@@ -21,6 +21,8 @@ class AuthViewModel: ViewModel() {
             val response = UserRepository().userLogin(email!!,password!!)
             if (response.isSuccessful){
                 authListener?.onSuccess(response.body()?.user!!)
+            }else{
+                authListener?.onFailure("Login failed, Error ${response.code()}")
             }
         }
     }

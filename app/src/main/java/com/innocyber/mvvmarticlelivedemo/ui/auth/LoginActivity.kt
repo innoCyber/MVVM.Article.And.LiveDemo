@@ -25,15 +25,13 @@ class LoginActivity : AppCompatActivity(),AuthListener {
     }
 
     override fun onStarted() {
-        progress_bar.show()
     }
 
     override fun onSuccess(user: User) {
-        toast("${user.name} logged in successfully")
+        toast("Login for ${user.email} is successful")
     }
 
     override fun onFailure(message: String) {
-        progress_bar.hide()
         toast(message)
     }
 }

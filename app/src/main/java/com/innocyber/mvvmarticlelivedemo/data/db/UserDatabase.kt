@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [UserDao::class],version = 1)
+@Database(entities = [User::class],version = 1)
 abstract class UserDatabase:RoomDatabase() {
 
     abstract fun getUserDao(): UserDao
@@ -16,7 +16,7 @@ abstract class UserDatabase:RoomDatabase() {
         private val LOCK = Any()
 
         operator fun invoke(context: Context) = instance?: synchronized(LOCK){
-            instance?:createDb(context).also{
+            instance?:createDb(context).also {
                 instance=it
             }
         }
